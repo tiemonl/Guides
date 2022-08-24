@@ -4,19 +4,17 @@ Here I will try to list a collection of the most needed and commonly used Custom
 These have been collected from either discussions on Discord or that I created with help from others.
 Special thanks to [rg9400](https://github.com/rg9400), [bakerboy448](https://github.com/bakerboy448) and Team Radarr.
 
-With Radarr V3, Custom Formats are much more advanced/powerful than with v0.2, although this also means a Custom Format is much more complicated to setup.
-
-After requesting it at Team Radarr, we now have the option to import/export the Custom Formats in a JSON format. This makes it easier to share the Custom Formats.
+With Sonarr V4+, Custom Formats are much more advanced/powerful than with the release profiles, although this also means a Custom Format is much more complicated to setup.
 
 I also made 3 guides related to this one.
 
 - [How to import Custom Formats](/Radarr/Radarr-import-custom-formats){:target="_blank" rel="noopener noreferrer"}. Where I will try to explain how to import the Custom Formats.
 - [How to upgrade Custom Formats](/Radarr/Radarr-how-to-update-custom-formats){:target="_blank" rel="noopener noreferrer"}. Where I will try to explain how to upgrade your existing Custom Formats.
-- [How to setup Custom Formats](/Radarr/Radarr-setup-custom-formats){:target="_blank" rel="noopener noreferrer"}. Where I will try to explain how to make the most use of Custom Formats and show some personal examples that I'm using. You can use these to get an idea on how to setup your own.
+- [How to setup Custom Formats](/Sonarr/Sonarr-setup-custom-formats){:target="_blank" rel="noopener noreferrer"}. Where I will try to explain how to make the most use of Custom Formats and show some personal examples that I'm using. You can use these to get an idea on how to setup your own.
 
 !!! tip
 
-    I also suggest to change the Propers and Repacks settings in Radarr
+    I also suggest to change the Propers and Repacks settings in Sonarr
 
     `Media Management` => `File Management` to `Do Not Prefer` and use the [Repack/Proper](#repack-proper) Custom Format.
 
@@ -24,8 +22,7 @@ I also made 3 guides related to this one.
 
     This way you make sure the Custom Format preferences will be used instead.
 
-{! include-markdown "../../includes/support.md" !}
-<!-- --8<-- "includes/support.md" -->
+--8<-- "includes/support.md"
 
 ------
 
@@ -48,33 +45,49 @@ I also made 3 guides related to this one.
 
 ------
 
-| Movie Versions                                | Unwanted                            | HQ Source Groups      | Streaming Services     |
-| --------------------------------------------- | ----------------------------------- | --------------------- | ---------------------- |
-| [Hybrid](#hybrid)                             | [BR-DISK](#br-disk)                 | [HQ-Remux](#hq-remux) | [Amazon](#amzn)        |
-| [Remaster](#remaster)                         | [EVO (no WEBDL)](#evo-no-webdl)     | [HQ](#hq)             | [Apple TV+](#aptv)     |
-| [4K Remaster](#4k-remaster)                   | [LQ](#lq)                           | [HQ-WEBDL](#hq-webdl) | [Disney+](#dsnp)       |
-| [Special Editions](#special-edition)          | [3D](#3d)                           |                       | [HBO Max](#hmax)       |
-| [Criterion Collection](#criterion-collection) | [No-RlsGroup](#no-rlsgroup)         |                       | [Hulu](#hulu)          |
-| [Theatrical Cut](#theatrical-cut)             | [Obfuscated](#obfuscated)           |                       | [Netflix](#nf)         |
-| [IMAX](#imax)                                 | [Retags](#retags)                   |                       | [Peacock TV](#pcok)    |
-| [IMAX Enhanced](#imax-enhanced)               | [DV (WEBDL)](#dv-webdl)             |                       | [Paramount+](#pmtp)    |
-|                                               | [Bad Dual Groups](#bad-dual-groups) |                       | [Movies Anywhere](#ma) |
-|                                               | [x265 (720/1080p)](#x265-7201080p)  |                       |                        |
-|                                               | [x265 (no HDR/DV)](#x265-no-hdrdv)  |                       |                        |
+| Series Versions                      | Unwanted                            | HQ Source Groups            | Streaming Services  |
+| ------------------------------------ | ----------------------------------- | --------------------------- | ------------------- |
+| [Hybrid](#hybrid)                    | [BR-DISK](#br-disk)                 | [WEB Tier 01](#web-tier-01) | [Amazon](#amzn)     |
+| [Remaster](#remaster)                | [LQ](#lq)                           | [WEB Tier 02](#web-tier-02) | [Apple TV+](#aptv)  |
+| [Special Editions](#special-edition) | [No-RlsGroup](#no-rlsgroup)         | [WEB Tier 03](#web-tier-03) | [DC Universe](#dcu) |
+|                                      | [Obfuscated](#obfuscated)           | [WEB Scene](#web-scene)     | [Disney+](#dsnp)    |
+|                                      | [Retags](#retags)                   |                             | [HBO Max](#hmax)    |
+|                                      | [Bad Dual Groups](#bad-dual-groups) |                             | [HBO](#hbo)         |
+|                                      | [DV (WEBDL)](#dv-webdl)             |                             | [Hulu](#hulu)       |
+|                                      | [x265 (HD)](#x265-hd)               |                             | [Netflix](#nf)      |
+|                                      | [x265 (no HDR/DV)](#x265-no-hdrdv)  |                             | [Paramount+](#pmtp) |
+|                                      |                                     |                             | [Peacock TV](#pcok) |
+|                                      |                                     |                             | [Quibi](#qibi)      |
+|                                      |                                     |                             | [SHOWTIME](#sho)    |
+|                                      |                                     |                             | [YouTube Red](#red) |
+|                                      |                                     |                             | [iTunes](#it)       |
 
 ------
 
-| Misc                                  | &nbsp; | &nbsp; | &nbsp; |
-| ------------------------------------- | ------ | ------ | ------ |
-| [Repack/Proper](#repack-proper)       | &nbsp; | &nbsp; | &nbsp; |
-| [Repack2](#repack2)                   | &nbsp; | &nbsp; | &nbsp; |
-| [Multi](#multi)                       | &nbsp; | &nbsp; | &nbsp; |
-| [x264](#x264)                         | &nbsp; | &nbsp; | &nbsp; |
-| [x265](#x265)                         | &nbsp; | &nbsp; | &nbsp; |
-| [MPEG2](#mpeg2)                       | &nbsp; | &nbsp; | &nbsp; |
-| [FreeLeech](#freeleech)               | &nbsp; | &nbsp; | &nbsp; |
-| [Dutch Groups](#dutch-groups)         | &nbsp; | &nbsp; | &nbsp; |
-| [Anime Dual Audio](#anime-dual-audio) | &nbsp; | &nbsp; | &nbsp; |
+| Misc                            | Misc                         | &nbsp; | &nbsp; |
+| ------------------------------- | ---------------------------- | ------ | ------ |
+| [FreeLeech](#freeleech)         | [Season Packs](#season-pack) | &nbsp; | &nbsp; |
+| [MPEG2](#mpeg2)                 | [Scene](#scene)              | &nbsp; | &nbsp; |
+| [Multi](#multi)                 | &nbsp;                       | &nbsp; | &nbsp; |
+| [Repack/Proper](#repack-proper) | &nbsp;                       | &nbsp; | &nbsp; |
+| [Repack v2](#repack-v2)         | &nbsp;                       | &nbsp; | &nbsp; |
+| [Repack v3](#repack-v3)         | &nbsp;                       | &nbsp; | &nbsp; |
+| [x264](#x264)                   | &nbsp;                       | &nbsp; | &nbsp; |
+| [x265](#x265)                   | &nbsp;                       | &nbsp; | &nbsp; |
+
+------
+
+| Anime                                                                       | Anime                                                                 | Anime                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------- |
+| [Anime BD Tier 01 (Top SeaDex Muxers)](#anime-bd-tier-01-top-seadex-muxers) | [Anime Web Tier 01 (Muxers)](#anime-web-tier-01-muxers)               | [Uncensored](#uncensored)             |
+| [Anime BD Tier 02 (SeaDex Muxers)](#anime-bd-tier-02-seadex-muxers)         | [Anime Web Tier 02 (Top FanSubs)](#anime-web-tier-02-top-fansubs)     | [v0](#v0)                             |
+| [Anime BD Tier 03 (SeaDex Muxers)](#anime-bd-tier-03-seadex-muxers)         | [Anime Web Tier 03 (SubsPlease)](#anime-web-tier-03-subsplease)       | [v1](v1)                              |
+| [Anime BD Tier 04 (SeaDex Muxers)](#anime-bd-tier-04-seadex-muxers)         | [Anime Web Tier 04 (Official Subs)](#anime-web-tier-04-official-subs) | [v2](#v2)                             |
+| [Anime BD Tier 05 (Remuxes)](#anime-bd-tier-05-remuxes)                     | [Anime Web Tier 05 (FanSubs)](#anime-web-tier-05-fansubs)             | [v3](#v3)                             |
+| [Anime BD Tier 06 (FanSubs)](#anime-bd-tier-06-fansubs)                     | [Anime Web Tier 06 (FanSubs)](#anime-web-tier-06-fansubs)             | [v4](#v4)                             |
+| [Anime BD Tier 07 (P2P/Scene)](#anime-bd-tier-07-p2pscene)                  | [Anime Raws](#anime-raws)                                             | [VRV](#vrv)                           |
+| [Anime BD Tier 08 (Mini Encodes)](#anime-bd-tier-08-mini-encodes)           | [Anime LQ Groups](#anime-lq-groups)                                   | [Anime Dual Audio](#anime-dual-audio) |
+|                                                                             |                                                                       | [Dubs Only](#dubs-only)               |
 
 ## Audio Advanced
 
@@ -91,7 +104,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/truehd-atmos.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/truehd-atmos.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -107,7 +120,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/dts-x.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/dts-x.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -126,14 +139,16 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/atmos-undefined.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/atmos-undefined.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
 
 ------
 
-### DD+ ATMOS
+### DDPlus ATMOS
+
+<sub>DDPlus = DD+</sub>
 
 ??? faq "DD+ ATMOS - [CLICK TO EXPAND]"
 
@@ -142,7 +157,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/ddplus-atmos.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/ddplus-atmos.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -160,7 +175,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/truehd.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/truehd.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -178,7 +193,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/dts-hd-ma.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/dts-hd-ma.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -194,7 +209,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/flac.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/flac.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -210,7 +225,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/pcm.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/pcm.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -225,7 +240,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/dts-hd-hra.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/dts-hd-hra.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -245,7 +260,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/ddplus.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/ddplus.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -261,7 +276,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/dts-es.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/dts-es.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -278,7 +293,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/dts.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/dts.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -297,7 +312,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/aac.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/aac.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -317,7 +332,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/dd.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/dd.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -332,7 +347,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/mp3.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/mp3.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -350,7 +365,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/opus.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/opus.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -366,7 +381,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/10-mono.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/10-mono.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -378,7 +393,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/20-stereo.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/20-stereo.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -390,7 +405,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/30-sound.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/30-sound.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -402,7 +417,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/40-sound.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/40-sound.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -414,7 +429,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/51-surround.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/51-surround.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -426,7 +441,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/61-surround.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/61-surround.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -438,7 +453,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/71-surround.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/71-surround.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -450,7 +465,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/91-surround.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/91-surround.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -474,7 +489,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/dv-hdr10.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/dv-hdr10.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -494,7 +509,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/dv.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/dv.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -514,7 +529,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/dv-hlg.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/dv-hlg.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -534,7 +549,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/dv-sdr.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/dv-sdr.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -556,7 +571,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/hdr10plus.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/hdr10plus.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -580,7 +595,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/hdr10.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/hdr10.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -600,7 +615,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/hdr.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/hdr.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -618,7 +633,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/hdr-undefined.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/hdr-undefined.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -640,7 +655,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/pq.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/pq.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -662,14 +677,14 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/hlg.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/hlg.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
 
 ------
 
-## Movie Versions
+## Series Versions
 
 ------
 
@@ -682,7 +697,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/hybrid.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/hybrid.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -701,59 +716,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-     [[% filter indent(width=4) %]][[% include 'json/radarr/cf/remaster.json' %]][[% endfilter %]]
-    ```
-
-<sub><sup>[TOP](#index)</sup>
-
-------
-
-### 4K Remaster
-
-??? faq "4K Remaster - [CLICK TO EXPAND]"
-
-    A remastered or mastered in 4K should give you usually the best picture and audio currently for the movie. Both are just names to describe the best possible currently for the movie.
-
-    To be clear, the final digital films on the Mastered in 4K Blu-rays still only have the same 1920 x 1080 pixels of actual resolution as normal Blu-rays. But the argument goes that because these full HD files were derived from higher-resolution masters, their images will be more precise, with better colors, less noise, and enhanced sharpness and detail. Not least because the higher-resolution mastering process will provide more detail from the original print for the Blu-ray masters to draw on when going through their (hopefully…) frame-by-frame compression process.
-
-    Another important element of the Mastered in 4K discs is that they’re all mastered with ‘x.v.YCC’ color specification. This delivers an expanded color range closer to that contained in original source material.
-
-??? example "JSON - [CLICK TO EXPAND]"
-
-    ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/4k-remaster.json' %]][[% endfilter %]]
-    ```
-
-<sub><sup>[TOP](#index)</sup>
-
-------
-
-### Criterion Collection
-
-??? faq "Criterion Collection - [CLICK TO EXPAND]"
-
-    The Criterion Collection, Inc. (or simply Criterion) is an American home video distribution company which focuses on licensing "important classic and contemporary films" and selling them to film aficionados. Criterion has helped to standardize characteristics of home video such as film restoration, using the letterbox format for widescreen films, and adding bonus features and commentary tracks.
-
-??? example "JSON - [CLICK TO EXPAND]"
-
-    ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/criterion-collection.json' %]][[% endfilter %]]
-    ```
-
-<sub><sup>[TOP](#index)</sup>
-
-------
-
-### Theatrical Cut
-
-??? faq "Theatrical Cut - [CLICK TO EXPAND]"
-
-    The Theatrical Cut is the version of the film that was shown at cinemas.
-
-??? example "JSON - [CLICK TO EXPAND]"
-
-    ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/theatrical-cut.json' %]][[% endfilter %]]
+     [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/remaster.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -772,49 +735,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/special-edition.json' %]][[% endfilter %]]
-    ```
-
-<sub><sup>[TOP](#index)</sup>
-
-------
-
-### IMAX
-
-??? faq "IMAX - [CLICK TO EXPAND]"
-    Description placeholder
-
-??? example "JSON - [CLICK TO EXPAND]"
-
-    ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/imax.json' %]][[% endfilter %]]
-    ```
-
-<sub><sup>[TOP](#index)</sup>
-
-------
-
-### IMAX Enhanced
-
-??? faq "IMAX Enhanced - [CLICK TO EXPAND]"
-    IMAX Enhanced: Get More Picture Instead of Black Bars
-
-    IMAX Enhanced exclusive expanded aspect ratio is 1:90:1, which offers up to 26% more picture for select sequences, meaning more of the action is visible on screen.
-
-    ![!Imax Enhanced Example](images/imax-e/imax-e.1.png)
-
-    ![!Imax Enhanced Example](images/imax-e/imax-e.2.png)
-
-    ![!Imax Enhanced Example](images/imax-e/imax-e.3.png)
-
-    ![!Imax Enhanced Example](images/imax-e/imax-e.4.png)
-
-    ![!Imax Enhanced Example](images/imax-e/imax-e.5.png)
-
-??? example "JSON - [CLICK TO EXPAND]"
-
-    ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/imax-enhanced.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/special-edition.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -846,25 +767,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/br-disk.json' %]][[% endfilter %]]
-    ```
-
-<sub><sup>[TOP](#index)</sup>
-
-------
-
-### EVO (no WEBDL)
-
-??? faq "EVO (no WEBDL) - [CLICK TO EXPAND]"
-
-    This group is often banned for the low quality Blu-ray releases, but their WEB-DLs are okay.
-
-    You will need to add the following to your new Custom Format when created in your Quality Profile (`Setting` => `Profiles`) and then set the score to `-1000` or even `-10000`
-
-??? example "JSON - [CLICK TO EXPAND]"
-
-    ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/evo-no-webdl.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/br-disk.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -879,33 +782,21 @@ I also made 3 guides related to this one.
 
     A collection of known Low Quality groups that are often banned from the the top trackers because their lack of quality.
 
-    !!! note
-
-        You might want to add the following also [EVO (no WEBDL)](#evo-no-webdl)
-
-        - BLOCK1 = Low-Quality Releases (often banned groups)
-        - BLOCK2 = Another Small list of often banned groups.
-        - BLOCK3 = Banned release groups.
-        - BLOCK4 = Low-quality and/or dishonest release groups.
-        - BLOCK5 = Banned Release Groups.
-        - BLOCK6 = Rips from Scene and quick-to-release P2P groups while adequate, are not considered high quality.
-        - RiffTrax = RiffTrax is an American company that produces scripted humorous audio commentary tracks intended to be played in unison with particular television programs and films, In short just annoying!!!
-
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/lq.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/lq.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
 
 ------
 
-### x265 (720/1080p)
+### x265 (HD)
 
-<sub>720/1080p no x265 = x265 (720/1080p)</sub>
+<sub>720/1080p no x265 = x265 (720/1080p) = x265 (HD)</sub>
 
-??? faq "720/1080p no x265 - [CLICK TO EXPAND]"
+??? faq "x265 (HD) - [CLICK TO EXPAND]"
 
     This blocks/ignores 720/1080p(HD) releases that are encoded in x265
 
@@ -917,7 +808,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/x265-7201080p.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/x265-hd.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -938,30 +829,12 @@ I also made 3 guides related to this one.
 
     !!! Danger
 
-        Don't use this together with the following Custom Format [x265 (720/1080p)](#x265-7201080p)
+        Don't use this together with the following Custom Format [x265 (HD)](#x265-h)
 
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/x265-no-hdrdv.json' %]][[% endfilter %]]
-    ```
-
-<sub><sup>[TOP](#index)</sup>
-
-------
-
-### 3D
-
-??? faq "3D - [CLICK TO EXPAND]"
-
-    If you prefer or not prefer 3D.
-
-    You can use Custom Format or use Restrictions (`Settings` => `Indexers` => `Restrictions`) what ever you prefer.
-
-??? example "JSON - [CLICK TO EXPAND]"
-
-    ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/3d.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/x265-no-hdrdv.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -982,7 +855,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/no-rlsgroup.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/no-rlsgroup.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -998,7 +871,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/obfuscated.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/obfuscated.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -1014,7 +887,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/retags.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/retags.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -1037,7 +910,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/dv-webdl.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/dv-webdl.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -1053,7 +926,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/bad-dual-groups.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/bad-dual-groups.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -1069,19 +942,31 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/repack-proper.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/repack-proper.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
 
 ------
 
-### Repack2
+### Repack v2
 
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/repack2.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/repack-v2.json' %]][[% endfilter %]]
+    ```
+
+<sub><sup>[TOP](#index)</sup>
+
+------
+
+### Repack v3
+
+??? example "JSON - [CLICK TO EXPAND]"
+
+    ```json
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/repack-v3.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -1099,7 +984,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/x264.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/x264.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -1118,7 +1003,48 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/x265.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/x265.json' %]][[% endfilter %]]
+    ```
+
+<sub><sup>[TOP](#index)</sup>
+
+------
+
+### Season Pack
+
+??? faq "Season Pack - [CLICK TO EXPAND]"
+
+    This Custom Format can be used depending if you prefer or not prefer a season pack
+
+    - Give it a score of `10` if you prefer a season pack.
+    - Give it a score of `-10000` if you don't prefer a season pack.
+    - `/\bS\d+\b(?!E\d+\b)/i` season packs are preferred: however, given the folder name is ignored the error/warning/issue occurs as the file names would not be a season pack of course.
+    - keep in mind this is the only way to prefer season packs if you have preferred words due to the long standing bug => Preferred Words overrule season pack preference [Sonarr/Sonarr#3562](https://github.com/Sonarr/Sonarr/issues/3562){:target="_blank" rel="noopener noreferrer"}
+
+    !!! danger "WARNING"
+        - This Custom Format could result in a download loop :bangbang:
+        - This will upgrade also your already downloaded single episodes :bangbang:
+
+??? example "JSON - [CLICK TO EXPAND]"
+
+    ```json
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/season-pack.json' %]][[% endfilter %]]
+    ```
+
+<sub><sup>[TOP](#index)</sup>
+
+------
+
+### Scene
+
+??? faq "Scene - [CLICK TO EXPAND]"
+
+    This Custom Format will try to recognize so called Scene releases, depending on your preferences you can give it a negative score `-10000` or a positive score or just don't add it all.
+
+??? example "JSON - [CLICK TO EXPAND]"
+
+    ```json
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/scene.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -1137,38 +1063,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/freeleech.json' %]][[% endfilter %]]
-    ```
-
-<sub><sup>[TOP](#index)</sup>
-
-------
-
-### Dutch Groups
-
-??? faq "Dutch Groups - [CLICK TO EXPAND]"
-
-    If you prefer movies with also a Dutch audio track.
-
-??? example "JSON - [CLICK TO EXPAND]"
-
-    ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/dutch-groups.json' %]][[% endfilter %]]
-    ```
-
-<sub><sup>[TOP](#index)</sup>
-
-------
-
-### Anime Dual Audio
-
-??? faq "Anime Dual Audio - [CLICK TO EXPAND]"
-    Description placeholder
-
-??? example "JSON - [CLICK TO EXPAND]"
-
-    ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/anime-dual-audio.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/freeleech.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -1180,7 +1075,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/mpeg2.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/mpeg2.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -1192,7 +1087,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/multi.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/multi.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -1203,50 +1098,71 @@ I also made 3 guides related to this one.
 
 ------
 
-### HQ
+### WEB Tier 01
 
-<sub>HQ-Releases = HQ</sub>
+??? faq "WEB Tier 01 - [CLICK TO EXPAND]"
 
-??? faq "HQ - [CLICK TO EXPAND]"
-
-    A collection of P2P groups that are known for their high quality releases.
+    - Groups that are on a certain list and active
+    - Groups that are on a certain list and did a minimum of x releases
+    - Groups that are not on the list but have a few releases on their name, but won't be trumped by a season pack on the top tier trackers
+    - Hybrid releases
 
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/hq.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/web-tier-01.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
 
 ------
 
-### HQ-WEBDL
+### WEB Tier 02
 
-??? faq "HQ-WEBDL - [CLICK TO EXPAND]"
+??? faq "WEB Tier 02 - [CLICK TO EXPAND]"
 
-    A personal collection of P2P WEB-DL groups that are known for their high quality releases.
+    - Groups that are on a certain list and are less or not active anymore
+    - Groups that only did a few releases
+    - Groups that are not on the list but have a few releases on their name
 
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/hq-webdl.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/web-tier-02.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
 
 ------
 
-### HQ-Remux
+### WEB Tier 03
 
-??? faq "HQ-Remux - [CLICK TO EXPAND]"
+??? faq "WEB Tier 03 - [CLICK TO EXPAND]"
 
-    A personal collection of P2P Remux groups that are known for their high quality releases.
+    - Groups that are on a certain list and are less or not active anymore
+    - Groups that hardly done any releases
+    - Groups that are not on the list but have a few releases on their name
 
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/hq-remux.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/web-tier-03.json' %]][[% endfilter %]]
+    ```
+
+<sub><sup>[TOP](#index)</sup>
+
+------
+
+### WEB Scene
+
+??? faq "WEB Scene - [CLICK TO EXPAND]"
+
+    One of the few scene groups that released quality releases.
+
+??? example "JSON - [CLICK TO EXPAND]"
+
+    ```json
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/web-scene.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -1268,7 +1184,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/amzn.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/amzn.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -1286,7 +1202,25 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/aptv.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/aptv.json' %]][[% endfilter %]]
+    ```
+
+<sub><sup>[TOP](#index)</sup>
+
+------
+
+### DCU
+
+<sub>DC Universe</sub>
+
+??? faq "DC Universe - [CLICK TO EXPAND]"
+
+    [From Wikipedia, the free encyclopedia](https://en.wikipedia.org/wiki/DC_Universe_(streaming_service)){:target="_blank" rel="noopener noreferrer"}
+
+??? example "JSON - [CLICK TO EXPAND]"
+
+    ```json
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/dcu.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -1304,7 +1238,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/dsnp.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/dsnp.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -1322,7 +1256,25 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/hmax.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/hmax.json' %]][[% endfilter %]]
+    ```
+
+<sub><sup>[TOP](#index)</sup>
+
+------
+
+### HBO
+
+<sub>HBO</sub>
+
+??? faq "HBO - [CLICK TO EXPAND]"
+
+    [From Wikipedia, the free encyclopedia](https://en.wikipedia.org/wiki/HBO){:target="_blank" rel="noopener noreferrer"}
+
+??? example "JSON - [CLICK TO EXPAND]"
+
+    ```json
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/hbo.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -1340,7 +1292,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/hulu.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/hulu.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -1358,25 +1310,7 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/nf.json' %]][[% endfilter %]]
-    ```
-
-<sub><sup>[TOP](#index)</sup>
-
-------
-
-### PCOK
-
-<sub>Peacock TV</sub>
-
-??? faq "Peacock TV - [CLICK TO EXPAND]"
-
-    [From Wikipedia, the free encyclopedia](https://en.wikipedia.org/wiki/Peacock_(streaming_service)){:target="_blank" rel="noopener noreferrer"}
-
-??? example "JSON - [CLICK TO EXPAND]"
-
-    ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/pcok.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/nf.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
@@ -1394,25 +1328,478 @@ I also made 3 guides related to this one.
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/pmtp.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/pmtp.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
 
 ------
 
-### MA
+### PCOK
 
-<sub>Movies Anywhere</sub>
+<sub>Peacock TV</sub>
 
-??? faq "Movies Anywhere - [CLICK TO EXPAND]"
+??? faq "Peacock TV - [CLICK TO EXPAND]"
 
-    [From Wikipedia, the free encyclopedia](https://en.wikipedia.org/wiki/Movies_Anywhere){:target="_blank" rel="noopener noreferrer"}
+    [From Wikipedia, the free encyclopedia](https://en.wikipedia.org/wiki/Peacock_(streaming_service)){:target="_blank" rel="noopener noreferrer"}
 
 ??? example "JSON - [CLICK TO EXPAND]"
 
     ```json
-    [[% filter indent(width=4) %]][[% include 'json/radarr/cf/ma.json' %]][[% endfilter %]]
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/pcok.json' %]][[% endfilter %]]
     ```
 
 <sub><sup>[TOP](#index)</sup>
+
+------
+
+### Qibi
+
+<sub>Quibi</sub>
+
+??? faq "Quibi - [CLICK TO EXPAND]"
+
+    [From Wikipedia, the free encyclopedia](https://en.wikipedia.org/wiki/Quibi){:target="_blank" rel="noopener noreferrer"}
+
+??? example "JSON - [CLICK TO EXPAND]"
+
+    ```json
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/qibi.json' %]][[% endfilter %]]
+    ```
+
+<sub><sup>[TOP](#index)</sup>
+
+------
+
+### SHO
+
+<sub>SHOWTIME</sub>
+
+??? faq "SHOWTIME - [CLICK TO EXPAND]"
+
+    [From Wikipedia, the free encyclopedia](https://en.wikipedia.org/wiki/Showtime_(TV_network)){:target="_blank" rel="noopener noreferrer"}
+
+??? example "JSON - [CLICK TO EXPAND]"
+
+    ```json
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/sho.json' %]][[% endfilter %]]
+    ```
+
+<sub><sup>[TOP](#index)</sup>
+
+------
+
+### RED
+
+<sub>RED = Youtube Red = Youtube Premium</sub>
+
+??? faq "Youtube Red - [CLICK TO EXPAND]"
+
+    [From Wikipedia, the free encyclopedia](https://en.wikipedia.org/wiki/YouTube_Premium){:target="_blank" rel="noopener noreferrer"}
+
+??? example "JSON - [CLICK TO EXPAND]"
+
+    ```json
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/red.json' %]][[% endfilter %]]
+    ```
+
+<sub><sup>[TOP](#index)</sup>
+
+------
+
+### IT
+
+<sub>iT = iTunes</sub>
+
+??? faq "iTunes - [CLICK TO EXPAND]"
+
+    [From Wikipedia, the free encyclopedia](https://en.wikipedia.org/wiki/ITunes){:target="_blank" rel="noopener noreferrer"}
+
+??? example "JSON - [CLICK TO EXPAND]"
+
+    ```json
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/it.json' %]][[% endfilter %]]
+    ```
+
+<sub><sup>[TOP](#index)</sup>
+
+------
+
+## Anime
+
+------
+
+### Anime BD Tier 01 (Top SeaDex Muxers)
+
+??? faq "Anime BD Tier 01 (Top SeaDex Muxers) - [CLICK TO EXPAND]"
+    Description placeholder
+
+??? example "JSON - [CLICK TO EXPAND]"
+
+    ```json
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/anime-bd-tier-01-top-seadex-muxers.json' %]][[% endfilter %]]
+    ```
+
+<sub><sup>[TOP](#index)</sup>
+
+------
+
+### Anime BD Tier 02 (SeaDex Muxers)
+
+??? faq "Anime BD Tier 02 (SeaDex Muxers) - [CLICK TO EXPAND]"
+    Description placeholder
+
+??? example "JSON - [CLICK TO EXPAND]"
+
+    ```json
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/anime-bd-tier-02-seadex-muxers.json' %]][[% endfilter %]]
+    ```
+
+<sub><sup>[TOP](#index)</sup>
+
+------
+
+### Anime BD Tier 03 (SeaDex Muxers)
+
+??? faq "Anime BD Tier 03 (SeaDex Muxers) - [CLICK TO EXPAND]"
+    Description placeholder
+
+??? example "JSON - [CLICK TO EXPAND]"
+
+    ```json
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/anime-bd-tier-03-seadex-muxers.json' %]][[% endfilter %]]
+    ```
+
+<sub><sup>[TOP](#index)</sup>
+
+------
+
+### Anime BD Tier 04 (SeaDex Muxers)
+
+??? faq "Anime BD Tier 04 (SeaDex Muxers) - [CLICK TO EXPAND]"
+    Description placeholder
+
+??? example "JSON - [CLICK TO EXPAND]"
+
+    ```json
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/anime-bd-tier-04-seadex-muxers.json' %]][[% endfilter %]]
+    ```
+
+<sub><sup>[TOP](#index)</sup>
+
+------
+
+### Anime BD Tier 05 (Remuxes)
+
+??? faq "Anime BD Tier 05 (Remuxes) - [CLICK TO EXPAND]"
+    Description placeholder
+
+??? example "JSON - [CLICK TO EXPAND]"
+
+    ```json
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/anime-bd-tier-05-remuxes.json' %]][[% endfilter %]]
+    ```
+
+<sub><sup>[TOP](#index)</sup>
+
+------
+
+### Anime BD Tier 06 (FanSubs)
+
+??? faq "Anime BD Tier 06 (FanSubs) - [CLICK TO EXPAND]"
+    Description placeholder
+
+??? example "JSON - [CLICK TO EXPAND]"
+
+    ```json
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/anime-bd-tier-06-fansubs.json' %]][[% endfilter %]]
+    ```
+
+<sub><sup>[TOP](#index)</sup>
+
+------
+
+### Anime BD Tier 07 (P2P/Scene)
+
+??? faq "Anime BD Tier 07 (P2P/Scene) - [CLICK TO EXPAND]"
+    Description placeholder
+
+??? example "JSON - [CLICK TO EXPAND]"
+
+    ```json
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/anime-bd-tier-07-p2pscene.json' %]][[% endfilter %]]
+    ```
+
+<sub><sup>[TOP](#index)</sup>
+
+------
+
+### Anime BD Tier 08 (Mini Encodes)
+
+??? faq "Anime BD Tier 08 (Mini Encodes) - [CLICK TO EXPAND]"
+    Description placeholder
+
+??? example "JSON - [CLICK TO EXPAND]"
+
+    ```json
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/anime-bd-tier-08-mini-encodes.json' %]][[% endfilter %]]
+    ```
+
+<sub><sup>[TOP](#index)</sup>
+
+------
+
+### Anime Web Tier 01 (Muxers)
+
+??? faq "Anime Web Tier 01 (Muxers) - [CLICK TO EXPAND]"
+    Description placeholder
+
+??? example "JSON - [CLICK TO EXPAND]"
+
+    ```json
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/anime-web-tier-01-muxers.json' %]][[% endfilter %]]
+    ```
+
+<sub><sup>[TOP](#index)</sup>
+
+------
+
+### Anime Web Tier 02 (Top FanSubs)
+
+??? faq "Anime Web Tier 02 (Top FanSubs) - [CLICK TO EXPAND]"
+    Description placeholder
+
+??? example "JSON - [CLICK TO EXPAND]"
+
+    ```json
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/anime-web-tier-02-top-fansubs.json' %]][[% endfilter %]]
+    ```
+
+<sub><sup>[TOP](#index)</sup>
+
+------
+
+### Anime Web Tier 03 (SubsPlease)
+
+??? faq "Anime Web Tier 03 (SubsPlease) - [CLICK TO EXPAND]"
+    Description placeholder
+
+??? example "JSON - [CLICK TO EXPAND]"
+
+    ```json
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/anime-web-tier-03-subsplease.json' %]][[% endfilter %]]
+    ```
+
+<sub><sup>[TOP](#index)</sup>
+
+------
+
+### Anime Web Tier 04 (Official Subs)
+
+??? faq "Anime Web Tier 04 (Official Subs) - [CLICK TO EXPAND]"
+    Description placeholder
+
+??? example "JSON - [CLICK TO EXPAND]"
+
+    ```json
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/anime-web-tier-04-official-subs.json' %]][[% endfilter %]]
+    ```
+
+<sub><sup>[TOP](#index)</sup>
+
+------
+
+### Anime Web Tier 05 (FanSubs)
+
+??? faq "Anime Web Tier 05 (FanSubs) - [CLICK TO EXPAND]"
+    Description placeholder
+
+??? example "JSON - [CLICK TO EXPAND]"
+
+    ```json
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/anime-web-tier-05-fansubs.json' %]][[% endfilter %]]
+    ```
+
+<sub><sup>[TOP](#index)</sup>
+
+------
+
+### Anime Web Tier 06 (FanSubs)
+
+??? faq "Anime Web Tier 06 (FanSubs) - [CLICK TO EXPAND]"
+    Description placeholder
+
+??? example "JSON - [CLICK TO EXPAND]"
+
+    ```json
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/anime-web-tier-06-fansubs.json' %]][[% endfilter %]]
+    ```
+
+<sub><sup>[TOP](#index)</sup>
+
+------
+
+### Anime Raws
+
+??? faq "Anime Raws - [CLICK TO EXPAND]"
+    Description placeholder
+
+??? example "JSON - [CLICK TO EXPAND]"
+
+    ```json
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/anime-raws.json' %]][[% endfilter %]]
+    ```
+
+<sub><sup>[TOP](#index)</sup>
+
+------
+
+### Anime LQ Groups
+
+??? faq "Anime LQ Groups - [CLICK TO EXPAND]"
+    Description placeholder
+
+??? example "JSON - [CLICK TO EXPAND]"
+
+    ```json
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/anime-lq-groups.json' %]][[% endfilter %]]
+    ```
+
+<sub><sup>[TOP](#index)</sup>
+
+------
+
+### Uncensored
+
+??? faq "Uncensored - [CLICK TO EXPAND]"
+    Description placeholder
+
+??? example "JSON - [CLICK TO EXPAND]"
+
+    ```json
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/uncensored.json' %]][[% endfilter %]]
+    ```
+
+<sub><sup>[TOP](#index)</sup>
+
+------
+
+### v0
+
+??? faq "v0 - [CLICK TO EXPAND]"
+    Description placeholder
+
+??? example "JSON - [CLICK TO EXPAND]"
+
+    ```json
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/v0.json' %]][[% endfilter %]]
+    ```
+
+<sub><sup>[TOP](#index)</sup>
+
+------
+
+### v1
+
+??? faq "v1 - [CLICK TO EXPAND]"
+    Description placeholder
+
+??? example "JSON - [CLICK TO EXPAND]"
+
+    ```json
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/v1.json' %]][[% endfilter %]]
+    ```
+
+<sub><sup>[TOP](#index)</sup>
+
+------
+
+### v2
+
+??? faq "v2 - [CLICK TO EXPAND]"
+    Description placeholder
+
+??? example "JSON - [CLICK TO EXPAND]"
+
+    ```json
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/v2.json' %]][[% endfilter %]]
+    ```
+
+<sub><sup>[TOP](#index)</sup>
+
+------
+
+### v3
+
+??? faq "v3 - [CLICK TO EXPAND]"
+    Description placeholder
+
+??? example "JSON - [CLICK TO EXPAND]"
+
+    ```json
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/v3.json' %]][[% endfilter %]]
+    ```
+
+<sub><sup>[TOP](#index)</sup>
+
+------
+
+### v4
+
+??? faq "v4 - [CLICK TO EXPAND]"
+    Description placeholder
+
+??? example "JSON - [CLICK TO EXPAND]"
+
+    ```json
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/v4.json' %]][[% endfilter %]]
+    ```
+
+<sub><sup>[TOP](#index)</sup>
+
+------
+
+### VRV
+
+??? faq "VRV - [CLICK TO EXPAND]"
+    Description placeholder
+
+??? example "JSON - [CLICK TO EXPAND]"
+
+    ```json
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/vrv.json' %]][[% endfilter %]]
+    ```
+
+<sub><sup>[TOP](#index)</sup>
+
+------
+
+### Anime Dual Audio
+
+??? faq "Anime Dual Audio - [CLICK TO EXPAND]"
+    Description placeholder
+
+??? example "JSON - [CLICK TO EXPAND]"
+
+    ```json
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/anime-dual-audio.json' %]][[% endfilter %]]
+    ```
+
+<sub><sup>[TOP](#index)</sup>
+
+------
+
+### Dubs Only
+
+??? faq "Dubs Only - [CLICK TO EXPAND]"
+    Description placeholder
+
+??? example "JSON - [CLICK TO EXPAND]"
+
+    ```json
+    [[% filter indent(width=4) %]][[% include 'json/sonarr/cf/dubs-only.json' %]][[% endfilter %]]
+    ```
+
+<sub><sup>[TOP](#index)</sup>
+
+------
