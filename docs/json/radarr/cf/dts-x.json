@@ -9,7 +9,7 @@
           "negate": false,
           "required": true,
           "fields": {
-              "value": "dts[-. ]?x(?!\\d)"
+              "value": "\\b(dts[-_. ]?x)\\b(?!\\d)"
           }
       },
       {
@@ -36,7 +36,7 @@
           "negate": true,
           "required": true,
           "fields": {
-              "value": "[^-]dd[p+]|eac3"
+              "value": "[^-]DD[P+]|e[-_. ]?ac3"
           }
       },
       {
